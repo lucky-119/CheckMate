@@ -1,0 +1,180 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <meta name="viewport" content="width=410; user-scalable=no; minimal-ui">
+    <title>Real Chess 2</title>
+    <link rel="stylesheet" href="lib/chessboard-0.3.0.min.css">
+    <link rel="stylesheet" href="lib/WinJS.4.0/css/ui-light.css" />
+
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
+  <style>
+    body {
+      display: flex;
+      min-height: 100vh;
+      flex-direction: column;
+    }
+    #page-lobby{
+	display: none;
+}
+
+#page-game {
+	display: none;
+}
+
+    main {
+      flex: 1 0 auto;
+    }
+
+    body {
+      background: #fff;
+      overflow-y: visible;
+    }
+
+    .input-field input[type=date]:focus + label,
+    .input-field input[type=text]:focus + label,
+    .input-field input[type=email]:focus + label,
+    .input-field input[type=password]:focus + label {
+      color: #e91e63;
+    }
+
+    .input-field input[type=date]:focus,
+    .input-field input[type=text]:focus,
+    .input-field input[type=email]:focus,
+    .input-field input[type=password]:focus {
+      border-bottom: 2px solid #e91e63;
+      box-shadow: none;
+    }
+  </style>
+  <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      form { background: white; padding: 3px; position: fixed; bottom: 0; width: 44%; }
+      form input { border: 0; padding: 10px; width: 90%; margin-right: .5%; }
+      form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; }
+      #messages { list-style-type: none; margin: 0; padding: 0; margin-top: 15%;}
+      #messages li { padding: 5px 10px; }
+      #messages li:nth-child(odd) { background: #eee; }
+      #messages { margin-bottom: 40px }
+    </style>
+  </head>
+  <body style="background-image: ">
+    <div class="page login" id='page-login'>
+    	<main>
+    <center>
+      <img class="responsive-img"  src="Chess.gif" />
+      <div class="section"></div>
+
+      <h5 class="indigo-text">Enter your gaming details</h5>
+      <div class="section"></div>
+
+      <div class="container">
+        <div class="z-depth-1 grey lighten-4 row" style="display: inline-block; padding: 0px 48px 12px 48px; border: 1px solid #EEE;">
+
+            <div class='row'>
+              <div class='col s12'>
+              </div>
+            </div>
+
+            <div class='row'>
+              <div class='input-field col s12'>
+                <input type='text' name='username' id='username' />
+                <label for='email'>Enter your name</label>
+              </div>
+            </div>
+
+            <div class='row'>
+              <div class='input-field col s12'>
+                <input type='text' name='tagline' id='tagline' />
+                <label for='password'>Enter your tagline</label>
+              </div>
+              <label style='float: right;'>
+								<!-- <a class='pink-text' href='#!'><b>Forgot Password?</b></a> -->
+							</label>
+            </div>
+
+            <br />
+            <center>
+              <div class='row'>
+                <button type='submit' name='btn_login' id="login" class='col s12 btn btn-large waves-effect indigo'>Let's Go</button>
+              </div>
+              <h7 align="center" class="indigo-tex"><a href='/home' class="indigo-text">Go Back</a></h7>
+            </center>
+        </div>
+      </div>
+      <!-- <a href="#!">Create account</a> -->
+    </center>
+
+    <div class="section"></div>
+    <div class="section"></div>
+  </main>
+    </div>
+    <div class="page lobby" id='page-lobby'>
+      <!-- <h2 align="center">Welcome to the dashboard</h2>
+      <h2 id='userLabel'></h2>
+      <h3>Active games</h3>
+      <div id='gamesList'>
+        No active games
+      </div>
+      <h3>Online players</h3>
+       <div id='userList'>
+         No users online
+      </div> -->
+        <div class="card" align="center" style="min-height: 100vh ; background-color: #f5f5f5 !important">
+	    <div class="card-content">
+	      <h2>Welcome to the dashboard</h2>
+	    </div>
+	    <div class="card-tabs">
+	      <ul class="tabs tabs-fixed-width">
+	        <li class="tab"><a class="active" href="#userLabel">Your account</a></li>
+	        <li class="tab"><a href="#gamesList">Active games</a></li>
+	        <li class="tab"><a href="#userList">Online users</a></li>
+	      </ul>
+	    </div>
+	    <div class="card-content grey lighten-4">
+	      <div id="userLabel" style="font-size: 35px;"></div>
+	      <div id="gamesList">No active games</div>
+	      <div id="userList">No users online</div>
+	    </div>
+	  </div>
+
+    </div>
+    <div class="page game" id='page-game'>
+      <button id='game-back' class="waves-effect waves-light btn-large" style="float: right; margin-right: 30%; margin-top: 20px;">Back</button>
+      <!-- <button id='game-quit' class="waves-effect waves-light btn-large" style="float: right; margin-right: 1%; margin-top: 20px;">Resign</button> -->
+      <div id='chat' align="right" style="margin-left: 55%;position: fixed; width: 40% !important;">
+        <ul id="messages"></ul>
+        <form action="">
+          <input id="m" autocomplete="off" /><button>Chat</button>
+        </form>
+      </div>
+      <div id='game-board' align="left" style= "width: 100vh;margin-left: 1%">
+      </div>
+    </div>
+    <script>
+      $(function () {
+        var socket = io();
+        $('form').submit(function(){
+          socket.emit('chat message', $('#m').val());
+          $('#m').val('');
+          return false;
+        });
+        socket.on('chat message', function(msg){
+          $('#messages').append($('<li>').text(msg));
+          window.scrollTo(0, document.body.scrollHeight);
+        });
+      });
+    </script>
+    <script src="lib/socket.io-1.2.0.js"></script>
+    <script src="lib/jquery-1.11.1.js"></script>
+    <script src="lib/WinJS.4.0/js/WinJS.min.js"></script>
+    <script src="lib/chess.min.js"></script>
+    <script src="lib/chessboard-0.3.0.min.js"></script>
+    <script src="/default.js"></script>
+  </body>
+</html>

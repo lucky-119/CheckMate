@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8">
+	<title>CheckMate</title>
+	<meta name="description" content="Free Responsive Html5 Css3 Templates | Zerotheme.com">
+	<meta name="author" content="www.zerotheme.com">
+
+    <!-- Mobile Specific Metas
+	================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- CSS
+	================================================== -->
+  	<link rel="stylesheet" href="css/zerogrid.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/responsiveslides.css">
+
+	<!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+	<!-- Owl Carousel Assets -->
+    <link href="owl-carousel/owl.carousel.css" rel="stylesheet">
+    <!-- <link href="owl-carousel/owl.theme.css" rel="stylesheet"> -->
+
+	<link rel="stylesheet" href="css/menu.css">
+	<script src="js/jquery183.min.js"></script>
+	<script src="js/script.js"></script>
+
+	<script src="js/jquery-latest.min.js"></script>
+	<script src="js/responsiveslides.min.js"></script>
+    <script>
+		// You can also use "$(window).load(function() {"
+		$(function () {
+		  // Slideshow
+		  $("#slider").responsiveSlides({
+			auto: true,
+			pager: false,
+			nav: true,
+			speed: 500,
+			namespace: "callbacks",
+			before: function () {
+			  $('.events').append("<li>before event fired.</li>");
+			},
+			after: function () {
+			  $('.events').append("<li>after event fired.</li>");
+			}
+		  });
+		});
+	</script>
+
+	<!--[if lt IE 8]>
+       <div style=' clear: both; text-align:center; position: relative;'>
+         <a href="http://windows.microsoft.com/en-US/internet-explorer/Items/ie/home?ocid=ie6_countdown_bannercode">
+           <img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
+        </a>
+      </div>
+    <![endif]-->
+    <!--[if lt IE 9]>
+		<script src="js/html5.js"></script>
+		<script src="js/css3-mediaqueries.js"></script>
+	<![endif]-->
+
+</head>
+
+<body class="home-page">
+	<div class="wrap-body">
+		<header>
+			<!-- <div class="top-bar">
+				<div class="wrap-top zerogrid">
+					<div class="row">
+						<div class="col-2-3">
+							<ul class="list-inline">
+								<li class="mail"><span><i class="fa fa-envelope"></i> ContacUs@Gmail.com</span></li>
+								<li class="phone"><span><i class="fa fa-phone"></i>(9999) 123 888 7</span></li>
+								<li class="clock"><span><i class="fa fa-clock-o"></i>Mon - Sat | 7:00 - 17:00</span></li>
+							</ul>
+						</div>
+						<div class="col-1-3">
+							<ul class="list-inline top-social">
+								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+								<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+								<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div> -->
+			<div class="header-logo">
+				<a href="index.html"><img src="http://img12.deviantart.net/134d/i/2011/038/5/b/chess_logo_by_zokac1-d3900uo.jpg" style="height: 100px;"></a>
+			</div>
+			<div id='cssmenu' >
+				<ul>
+				   <li class="active"><a href='index.html'><span>CheckMate</span></a></li>
+				   <% if(user) {%>
+				   	<li><a href='#'><span>Welcome <%= user.username %></span></a></li>
+				   	<li><a href='/game'><span>Play</span></a></li>
+						<li><a href='/signout'><span>Signout</span></a></li>
+				   <%}%>
+				   <% if(!user) {%>
+				   <li><a href='/signup'><span>Create Account</span></a></li>
+				   <li align='left'><a href='/login'><span>Login</span></a></li>
+					<%}%>
+				</ul>
+			</div>
+			<div class="slider">
+				<!-- Slideshow -->
+				<div class="callbacks_container">
+					<ul class="rslides" id="slider">
+						<li>
+							<img src="images/chesss.jpeg" style="height: 745px;" alt="">
+							<div class="caption">
+								<h1>Battle with your pawns and show everyone what you got</h1>
+								<span>Play against your friends and your enemies.<br> Challenge them for a game of chess and show them what you have got.</span>
+							</div>
+						</li>
+						<li>
+							<img src="https://images2.alphacoders.com/717/thumb-1920-71792.jpg" style="height: 745px;" alt="">
+							<div class="caption">
+								<h1>New exciting features up while playing the game</h1>
+								<span>You get the option to chat with the opponent while playing the game.<br>Tease him or encourage him it is up to you.</span>
+							</div>
+						</li>
+						<li>
+							<img src="https://wallpaperscraft.com/image/chess_field_structure_102598_1920x1080.jpg" style="height: 745px;" alt="">
+							<div class="caption">
+								<h1>Play Chess on the go</h1>
+								<span >Easy interface allows user to play whenever he wants to or resign whenever he wants to.<br>There is even an option to spectate an ongoing game by someone else.</span>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</header>
+		<!--////////////////////////////////////Container-->
+		<section id="container">
+			<div class="wrap-container">
+				<!-----------------content-box-1-------------------->
+				<section class="content-box box-1">
+					<div class="zerogrid">
+						<div class="row wrap-box"><!--Start Box-->
+							<div class="col-1-3">
+								<div class="wrap-col">
+									<div class="box-item">
+										<img src="images/1.jpg">
+										<h2>Chat and Discuss</h2>
+										<p>Chat with your opponent. Discuss with your friends with the chat option.</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-1-3">
+								<div class="wrap-col">
+									<div class="box-item">
+										<img src="images/2.jpg">
+										<h2>Rating and Scored</h2>
+										<p>Each move carries points and to win you must reach a certain score mark.</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-1-3">
+								<div class="wrap-col">
+									<div class="box-item">
+										<img src="images/3.jpg">
+										<h2>Algorithm</h2>
+										<p>With our real time chess application and our perfect algorithm never lose a game because of us.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-----------------content-box-2-------------------->
+				<section class="content-box boxstyle-1 box-2">
+					<div class="zerogrid">
+						<div class="row wrap-box"><!--Start Box-->
+							<div class="box-item">
+								<blockquote><p>We’ve all heard that chess is almost entirely about tactics, especially at the lower levels of the game. And it’s true that for amateurs, nearly every game will be decided by a tactical error. But Fischer reminds us that the likelihood of making such an error is based only on our tactical skills; to really show our tactical prowess, we must first reach good positions where the tactics are likely to favor us—and make finding the correct paths difficult for our opponents.</p></blockquote>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-----------------content-box-3-------------------->
+				<section class="content-box box-3">
+					<div class="zerogrid">
+						<div class="row wrap-box"><!--Start Box-->
+							<div class="header">
+								<div class="wrapper">
+									<h2>HOW TO</h2>
+									<hr class="line">
+									<div class="intro">Play a game</div>
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col-1-3">
+									<div class="wrap-col">
+										<div class="box-item">
+											<div class="zoom-container">
+												<% if(!user) {%>
+												<img src="images/feature-icon-1.png" />
+											</div>
+											<div class="box-item-content">
+												
+												<a href='/signup'><h3>MAKE AN ACCOUNT</h3></a>
+												<p>We have step by step instruction to make an account.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-1-3">
+									<div class="wrap-col">
+										<div class="box-item">
+											<div class="zoom-container">
+												<img src="images/feature-icon-2.png" />
+											</div>
+											<div class="box-item-content">
+												<a href='/login'><h3>LOGIN</h3></a>
+												<p>Log in into your account to access all our features.</p>
+												<%}%>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-1-3">
+									<div class="wrap-col">
+										<div class="box-item">
+											<div class="zoom-container">
+												<img src="images/feature-icon-3.png" />
+											</div>
+											<div class="box-item-content">
+												<a href='/index.html'><h3>GAMING NAME AND TAGLINE</h3></a>
+												<p>Input your gaming name and your tag line for others to see.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!--
+								<div class="col-1-4">
+									<div class="wrap-col">
+										<div class="box-item">
+											<div class="zoom-container">
+												<img src="images/feature-icon-4.png" />
+											</div>
+											<div class="box-item-content">
+												<h3>CHOOSE YOUR OPPONENT</h3>
+												<p>Select with whom you want to play against from the list of all the active players.</p>-->
+											</div>
+										</div>
+									</div>
+								</div>
+							</div
+						</div>
+					</div>
+				</section>
+				<!-----------------content-box-4-------------------->
+
+
+
+				<!-----------------content-box-6-------------------->
+				<section class="content-box box-6">
+					<div class="zerogrid" style="width: 100%;">
+						<div class="row wrap-box"><!--Start Box-->
+							<div class="col-1-2">
+								<div class="portfolio-box">
+									<img src="images/8.jpg" class="img-responsive" alt="">
+									<div class="portfolio-box-caption">
+										<div class="portfolio-box-caption-content">
+											<div class="project-name">
+												<h3><b><font style="background-color: yellow">FORUM</font></b></h3>
+											</div>
+											<div class="project-des">
+												<p>We wish to implement a forum feature into our application in the future.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-1-2">
+								<div class="portfolio-box">
+									<img src="images/9.jpg" class="img-responsive" alt="">
+									<div class="portfolio-box-caption">
+										<div class="portfolio-box-caption-content">
+											<div class="project-name">
+												<h3><b><font style="background-color: yellow">ADVERTISEMENT</font></b></h3>
+											</div>
+											<div class="project-des">
+												<p>We wish to advertise this app more so that more and more people get to know about this.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+			</div>
+		</section>
+		<!--////////////////////////////////////Footer-->
+		<footer>
+
+			<div class="zerogrid wrap-footer">
+				<div class="row">
+					<div class="col-1-2 col-footer-1">
+						<div class="wrap-col">
+							<h3 class="widget-title">About Us</h3>
+							<p>We are a team of three - Lakshay Arora, Nirut Gupta and Parth Jawa. Everyone has contributed something differently to this project from Backend to Frontend, from Project reports to Class diagram.	</p>
+						</div>
+					</div>
+					<!--
+					<div class="col-1-4 col-footer-3">
+						<div class="wrap-col">
+							<h3 class="widget-title">Tag Cloud</h3>
+							<a href="#">Chess</a>
+							<a href="#">Multiplayer</a>
+							<a href="#">Chat App</a>
+							<a href="#">Authentication</a>
+							<a href="#">Real Time</a>
+							<a href="#">Sockets</a>
+						</div>
+					</div>
+				-->
+				</div>
+			</div>
+		</footer>
+	</div>
+
+	<!-- carousel -->
+	<script src="owl-carousel/owl.carousel.js"></script>
+    <script>
+    $(document).ready(function() {
+      $("#owl-brand").owlCarousel({
+        autoPlay: 3000,
+        items : 6,
+		itemsDesktop : [1199,4],
+        itemsDesktopSmall : [979,2],
+		navigation: true,
+		navigationText: ['<i class="fa fa-chevron-left fa-5x"></i>', '<i class="fa fa-chevron-right fa-5x"></i>'],
+		pagination: false
+      });
+    });
+    </script>
+</body>
+</html>
